@@ -5,7 +5,7 @@ function getMessages(req, res) {
 function postMessages(req, res) {
     console.log('updating message');
 
-    return res.send(200);
+    return res.sendStatus(200);
 }
 
 module.exports = {
