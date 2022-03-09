@@ -1,17 +1,8 @@
-const friends = [
-    {
-      id: 0,
-      name: 'Albert Einstein'
-    },
-    {
-      id: 1,
-      name: 'Sir Isaac Newton'
-    }
-];
+const model = require("../models/friends.model");
 
 function getFriend(req, res) {
     const friendId = Number(req.params.friendId);
-    const friend = friends[friendId];
+    const friend = model[friendId];
 
     if (friend) {
         return res.json(friend);
@@ -24,7 +15,7 @@ function getFriend(req, res) {
 }
 
 function getFriends(req, res) {
-    return res.status(200).json(friends);
+    return res.status(200).json(model);
 }
 
 function postFriends(req, res) {
@@ -35,11 +26,11 @@ function postFriends(req, res) {
     }
 
     const newFriend = {
-        id: friends.length,
+        id: model.length,
         name: req.body.name
     };
 
-    friends.push(newFriend);
+    model.push(newFriend);
 
     return res.json(newFriend);
 }

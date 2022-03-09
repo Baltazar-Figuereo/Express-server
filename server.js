@@ -18,13 +18,10 @@ app.use((req, res, next) => {
 app.use(express.json())
 
 app.post("/friends", friendsController.postFriends);
-
 app.get("/friends", friendsController.getFriends);
-
 app.get("/friends/:friendId", friendsController.getFriend)
 
 app.get('/messages', messageController.getMessages);
-
 app.post("/messages", messageController.postMessages);
 
 app.listen(PORT, () => {
