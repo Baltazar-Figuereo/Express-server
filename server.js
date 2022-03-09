@@ -28,7 +28,7 @@ app.get("/friends/:friendId", (req, res) => {
     }
     else {
         res.status(404).json({
-            error: "Friend does not exist"
+            error: "Friend does not existgit "
         });
     }
 
